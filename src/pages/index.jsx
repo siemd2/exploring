@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import StudentForm from '../components/StudentForm';
-import initialData from '../../students.json';
+import initialData from '../data/students.json';
 
 function HomePage() {
   // State to hold the list of students
   const [students, setStudents] = useState(initialData);
 
   // Function to handle new student addition
-  const onNewStudent = (newStudent : any) => {
+  const onNewStudent = (newStudent) => {
     // Check if student ID already exists
     const exists = students.some(student => student.id === newStudent.id);
     if (exists) {
